@@ -24,7 +24,7 @@ background-color: #fcf9ff;
 <div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
 <div class="font-['Pacifico'] text-2xl text-primary">Demet Ayaz</div>
 <nav class="hidden md:flex space-x-8">
-<a href="#" class="text-gray-700 hover:text-primary">Ana Sayfa</a>
+<a href="index.html" class="text-gray-700 hover:text-primary">Ana Sayfa</a>
 <a href="hakkımda.html" class="text-gray-700 hover:text-primary">Hakkımda</a>
 <a href="calismalarim.html" class="text-gray-700 hover:text-primary">Çalışmalarım</a>
 <a href="#" class="text-gray-700 hover:text-primary">Blog</a>
@@ -432,62 +432,36 @@ Tedarik zinciri optimizasyonu ve sürdürülebilir lojistik çözümleri ile iş
 </footer>
 </div>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-const sliderWrapper = document.querySelector('.slider-wrapper');
-const slides = document.querySelectorAll('.slider-slide');
-const dotsContainer = document.querySelector('.slider-dots');
-const dots = document.querySelectorAll('.slider-dot');
-const prevBtn = document.querySelector('.slider-arrow.prev');
-const nextBtn = document.querySelector('.slider-arrow.next');
-let currentIndex = 0;
-const slideWidth = 100; // percentage
-const visibleSlides = 3;
-const totalSlides = slides.length;
-// Initialize slider
-updateSlider();
-// Event listeners for arrows
-prevBtn.addEventListener('click', () => {
-currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-updateSlider();
-});
-nextBtn.addEventListener('click', () => {
-currentIndex = (currentIndex + 1) % totalSlides;
-updateSlider();
-});
-// Event listeners for dots
-dots.forEach((dot, index) => {
-dot.addEventListener('click', () => {
-currentIndex = index;
-updateSlider();
-});
-});
-function updateSlider() {
-// Calculate transform value to show current slide and two more
-const offset = -currentIndex * (100 / visibleSlides);
-// Apply transform to move slider
-sliderWrapper.style.transform = `translateX(${offset}%)`;
-sliderWrapper.style.width = `${(totalSlides / visibleSlides) * 100}%`;
-// Update slides width
-slides.forEach(slide => {
-slide.style.width = `${100 / totalSlides}%`;
-});
-// Update active dot
-dots.forEach((dot, index) => {
-if (index === currentIndex) {
-dot.classList.add('bg-opacity-100');
-dot.classList.remove('bg-opacity-50');
-} else {
-dot.classList.remove('bg-opacity-100');
-dot.classList.add('bg-opacity-50');
-}
-});
-}
-// Auto slide every 5 seconds
-setInterval(() => {
-currentIndex = (currentIndex + 1) % totalSlides;
-updateSlider();
-}, 5000);
-});
+ // Mobil menü için script
+ document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.querySelector('.md\\:hidden');
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out';
+    mobileMenu.innerHTML = `
+      <div class="flex justify-between items-center p-4 border-b">
+        <div class="font-['Pacifico'] text-2xl text-primary">Nurper</div>
+        <button class="mobile-close w-8 h-8 flex items-center justify-center">
+          <i class="ri-close-line text-xl"></i>
+        </button>
+      </div>
+      <nav class="flex flex-col p-4">
+        <a href="index.html" class="text-gray-700 hover:text-primary py-3 border-b">Ana Sayfa</a>
+        <a href="hakkımda.html" class="text-gray-700 hover:text-primary py-3 border-b">Hakkımda</a>
+        <a href="calismalarim.html" class="text-primary font-medium py-3 border-b">Çalışmalarım</a>
+        <a href="#" class="text-gray-700 hover:text-primary py-3 border-b">Blog</a>
+        <a href="#" class="text-gray-700 hover:text-primary py-3">İletişim</a>
+      </nav>
+    `;
+    document.body.appendChild(mobileMenu);
+    
+    menuButton.addEventListener('click', function() {
+      mobileMenu.classList.remove('translate-x-full');
+    });
+    
+    mobileMenu.querySelector('.mobile-close').addEventListener('click', function() {
+      mobileMenu.classList.add('translate-x-full');
+    });
+  });
 </script>
 </body>
 </html>
