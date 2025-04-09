@@ -6,7 +6,7 @@
 <title>Demet Ayaz - Tedarik Zinciri Danışmanı</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Donegal+One&family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com/3.4.16"></script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#3cb371',secondary:'#424242'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
@@ -16,22 +16,73 @@ body {
 font-family: 'Inter', sans-serif;
 background-color: #fcf9ff;
 }
+
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Inter', sans-serif;
+}
+
+.text-content {
+font-family: 'Inter', sans-serif;
+font-size: 1.125rem;
+line-height: 1.75;
+}
+
+.nav-link {
+  font-family: 'Donegal One', sans-serif;
+  color: #3cb371;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #3cb371;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover {
+  color: #2a855d;
+}
+
+header {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.logo-container {
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
 </style>
 </head>
 <body>
 <div class="w-full min-h-screen flex flex-col">
-<header class="w-full bg-white shadow-sm py-4">
-<div class="container mx-auto px-4 md:px-8 flex justify-between items-center">
-<div class="font-['Pacifico'] text-2xl text-primary">Demet Ayaz</div>
-<nav class="hidden md:flex space-x-8">
-<a href="index.html" class="text-gray-700 hover:text-primary">Ana Sayfa</a>
-<a href="hakkımda.html" class="text-gray-700 hover:text-primary">Hakkımda</a>
-<a href="calismalarim.html" class="text-gray-700 hover:text-primary">Çalışmalarım</a>
-<a href="#" class="text-gray-700 hover:text-primary">Blog</a>
-<a href="iletisim.html" class="text-gray-700 hover:text-primary">İletişim</a>
+<header class="w-full bg-white shadow-sm py-6">
+<div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+<nav class="hidden md:flex space-x-10">
+<a href="index.html" class="nav-link text-primary text-lg font-medium">Ana Sayfa</a>
+<a href="hakkımda.html" class="nav-link text-lg font-medium">Hakkımda</a>
 </nav>
-<div class="md:hidden w-8 h-8 flex items-center justify-center">
-<i class="ri-menu-line text-xl"></i>
+<div class="logo-container h-16 w-auto"><img src="logo.png" alt="Demet Ayaz Logo" class="h-full w-auto object-contain"></div>
+<nav class="hidden md:flex space-x-10">
+<a href="calismalarim.html" class="nav-link text-lg font-medium">Çalışmalarım</a>
+<a href="blog.html" class="nav-link text-lg font-medium">Blog</a>
+<a href="iletisim.html" class="nav-link text-lg font-medium">İletişim</a>
+</nav>
+<div class="md:hidden w-8 h-8 flex items-center justify-center cursor-pointer hover:bg-gray-100 rounded-full transition-all duration-300">
+<i class="ri-menu-line text-xl text-primary"></i>
 </div>
 </div>
 </header>
@@ -108,9 +159,8 @@ Tedarik zincirinin her aşamasında işletmenize özel çözümler sunarak opera
 <p class="text-gray-600 mb-4">
 Hammadde tedarikinden nihai ürün teslimatına kadar tüm süreçlerin analizi ve optimizasyonu ile maliyetleri düşürüp verimliliği artırıyorum.
 </p>
-<button class="text-primary font-medium flex items-center !rounded-button whitespace-nowrap">
-Detaylı Bilgi
-<i class="ri-arrow-right-line ml-2"></i>
+
+
 </button>
 </div>
 </div>
@@ -123,9 +173,8 @@ Detaylı Bilgi
 <p class="text-gray-600 mb-4">
 Depolama, taşıma ve dağıtım süreçlerinin iyileştirilmesi ile teslimat sürelerini kısaltıp müşteri memnuniyetini artırıyorum.
 </p>
-<button class="text-primary font-medium flex items-center !rounded-button whitespace-nowrap">
-Detaylı Bilgi
-<i class="ri-arrow-right-line ml-2"></i>
+
+
 </button>
 </div>
 </div>
@@ -138,9 +187,8 @@ Detaylı Bilgi
 <p class="text-gray-600 mb-4">
 Çevresel etkileri azaltan, sosyal sorumluluk bilinciyle hareket eden ve ekonomik sürdürülebilirliği sağlayan tedarik zinciri çözümleri.
 </p>
-<button class="text-primary font-medium flex items-center !rounded-button whitespace-nowrap">
-Detaylı Bilgi
-<i class="ri-arrow-right-line ml-2"></i>
+
+
 </button>
 </div>
 </div>
@@ -212,103 +260,152 @@ Danışmanlık Teklifi Al
     </div>
   </section>
 
-  <section class="container mx-auto px-4 md:px-8 py-16">
+  <section class="container mx-auto px-4 md:px-8 py-16 bg-white rounded-lg shadow-sm">
     <div class="text-center mb-12">
-      <h2 class="text-3xl font-bold text-primary mb-4">Müşteri Yorumları</h2>
+      <h2 class="text-3xl font-bold text-primary mb-4">Süreç Nasıl İşliyor?</h2>
       <p class="text-gray-600 max-w-2xl mx-auto">
-        Tedarik zinciri danışmanlığı hizmetlerimden faydalanan değerli müşterilerimin görüşleri.
+        Tedarik zinciri süreçlerinizi optimize etmek için izlediğimiz adımlar aşağıda belirtilmiştir.
       </p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Yorum 1 -->
-      <div class="bg-white rounded-xl shadow-md p-6 relative">
-        <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
-          <i class="ri-double-quotes-l"></i>
+    <div class="relative max-w-4xl mx-auto py-8">
+      <!-- Dikey çizgi -->
+      <div class="absolute left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 -translate-x-1/2"></div>
+      
+      <!-- Adım 1 -->
+      <div class="flex items-center mb-16 relative">
+        <div class="w-1/2 pr-8 text-right">
+          <h3 class="text-lg font-semibold text-primary">Gıda güvenliği ekibi kurulur</h3>
+          <p class="text-gray-600 mt-2">Sürecin başlangıcında, gıda güvenliği standartlarını belirleyecek uzman bir ekip oluşturulur.</p>
         </div>
-        <div class="pt-6">
-          <p class="text-gray-700 italic mb-6">
-            "Demet Hanım'ın tedarik zinciri optimizasyonu sayesinde operasyonel maliyetlerimizi %15 oranında düşürdük. Profesyonel yaklaşımı ve sektör bilgisi ile işletmemize büyük değer kattı."
-          </p>
-          <div class="flex items-center">
-            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-              <img src="https://public.readdy.ai/ai/img_res/f4593885aef74c07423e6c31100a01ef.jpg" alt="Müşteri" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-800">Ayşe Yılmaz</h4>
-              <div class="flex text-yellow-400">
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-              </div>
-            </div>
-          </div>
+        <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-md">
+          <span>1</span>
+        </div>
+        <div class="w-1/2 pl-8"></div>
+      </div>
+      
+      <!-- Adım 2 -->
+      <div class="flex items-center mb-16 relative">
+        <div class="w-1/2 pr-8"></div>
+        <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-md">
+          <span>2</span>
+        </div>
+        <div class="w-1/2 pl-8">
+          <h3 class="text-lg font-semibold text-primary">Ürün Tanımı yapılır</h3>
+          <p class="text-gray-600 mt-2">Tedarik edilecek gıda ürünlerinin detaylı tanımları ve spesifikasyonları belirlenir.</p>
         </div>
       </div>
       
-      <!-- Yorum 2 -->
-      <div class="bg-white rounded-xl shadow-md p-6 relative">
-        <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
-          <i class="ri-double-quotes-l"></i>
+      <!-- Adım 3 -->
+      <div class="flex items-center mb-16 relative">
+        <div class="w-1/2 pr-8 text-right">
+          <h3 class="text-lg font-semibold text-primary">Tasarlanan kullanım belirlenir</h3>
+          <p class="text-gray-600 mt-2">Ürünlerin hedef kitlesi, kullanım amacı ve dağıtım kanalları planlanır.</p>
         </div>
-        <div class="pt-6">
-          <p class="text-gray-700 italic mb-6">
-            "Lojistik ve dağıtım süreçlerimizin yeniden yapılandırılması sayesinde teslimat sürelerimiz kısaldı ve müşteri memnuniyetimiz arttı. Demet Hanım'ın stratejik yaklaşımı işletmemize rekabet avantajı sağladı."
-          </p>
-          <div class="flex items-center">
-            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-              <img src="https://public.readdy.ai/ai/img_res/c322cd7b0d21d199940ad06ac98a356d.jpg" alt="Müşteri" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-800">Mehmet Demir</h4>
-              <div class="flex text-yellow-400">
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-half-fill"></i>
-              </div>
-            </div>
-          </div>
+        <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-md">
+          <span>3</span>
+        </div>
+        <div class="w-1/2 pl-8"></div>
+      </div>
+      
+      <!-- Adım 4 -->
+      <div class="flex items-center mb-16 relative">
+        <div class="w-1/2 pr-8"></div>
+        <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-md">
+          <span>4</span>
+        </div>
+        <div class="w-1/2 pl-8">
+          <h3 class="text-lg font-semibold text-primary">Üretilecek ürünlerin iş akışları oluşturulur</h3>
+          <p class="text-gray-600 mt-2">Hammaddeden son ürüne kadar tüm üretim süreçleri ve iş akışları belirlenir.</p>
         </div>
       </div>
       
-      <!-- Yorum 3 -->
-      <div class="bg-white rounded-xl shadow-md p-6 relative">
-        <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white">
-          <i class="ri-double-quotes-l"></i>
+      <!-- Adım 5 -->
+      <div class="flex items-center mb-16 relative">
+        <div class="w-1/2 pr-8 text-right">
+          <h3 class="text-lg font-semibold text-primary">İş akışları yerinde doğrulanır</h3>
+          <p class="text-gray-600 mt-2">Belirlenen iş akışları üretim tesislerinde test edilir ve doğrulanır.</p>
         </div>
-        <div class="pt-6">
-          <p class="text-gray-700 italic mb-6">
-            "Sürdürülebilir tedarik zinciri dönüşümü projemizde Demet Hanım'ın desteği sayesinde hem çevresel etkimizi azalttık hem de uzun vadeli maliyet avantajı elde ettik. Sektörümüzde öncü bir konuma geldik."
-          </p>
-          <div class="flex items-center">
-            <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
-              <img src="https://public.readdy.ai/ai/img_res/e1156f1610edf9c55bdd7866266239f6.jpg" alt="Müşteri" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h4 class="font-semibold text-gray-800">Zeynep Kaya</h4>
-              <div class="flex text-yellow-400">
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-              </div>
-            </div>
-          </div>
+        <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-md">
+          <span>5</span>
+        </div>
+        <div class="w-1/2 pl-8"></div>
+      </div>
+      
+      <!-- Adım 6 -->
+      <div class="flex items-center mb-16 relative">
+        <div class="w-1/2 pr-8"></div>
+        <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-md">
+          <span>6</span>
+        </div>
+        <div class="w-1/2 pl-8">
+          <h3 class="text-lg font-semibold text-primary">Potansiyel tehlikeler ve önlemler belirlenir</h3>
+          <p class="text-gray-600 mt-2">Tedarik zincirindeki olası riskler analiz edilir ve önleyici tedbirler geliştirilir.</p>
         </div>
       </div>
-    </div>
-    
-    <div class="text-center mt-12">
-      <button class="bg-white border-2 border-primary text-primary px-6 py-3 font-medium !rounded-button hover:bg-primary hover:text-white transition duration-300 whitespace-nowrap">
-        Tüm Referansları Görüntüle
-      </button>
+      
+      <!-- Adım 7 -->
+      <div class="flex items-center mb-16 relative">
+        <div class="w-1/2 pr-8 text-right">
+          <h3 class="text-lg font-semibold text-primary">Kritik kontrol noktaları belirlenir</h3>
+          <p class="text-gray-600 mt-2">Gıda güvenliği için kritik kontrol noktaları tespit edilir ve izleme prosedürleri oluşturulur.</p>
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-md">
+          <span>7</span>
+        </div>
+        <div class="w-1/2 pl-8"></div>
+      </div>
+      
+      <!-- Adım 8 -->
+      <div class="flex items-center mb-16 relative">
+        <div class="w-1/2 pr-8"></div>
+        <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-md">
+          <span>8</span>
+        </div>
+        <div class="w-1/2 pl-8">
+          <h3 class="text-lg font-semibold text-primary">Kritik limitler belirlenir</h3>
+          <p class="text-gray-600 mt-2">Her kritik kontrol noktası için kabul edilebilir limitler ve tolerans aralıkları belirlenir.</p>
+        </div>
+      </div>
+      
+      <!-- Adım 9 -->
+      <div class="flex items-center mb-16 relative">
+        <div class="w-1/2 pr-8 text-right">
+          <h3 class="text-lg font-semibold text-primary">Düzeltici faaliyetler belirlenir</h3>
+          <p class="text-gray-600 mt-2">Limitler aşıldığında uygulanacak düzeltici faaliyetler ve acil durum prosedürleri planlanır.</p>
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-md">
+          <span>9</span>
+        </div>
+        <div class="w-1/2 pl-8"></div>
+      </div>
+      
+      <!-- Adım 10 -->
+      <div class="flex items-center mb-16 relative">
+        <div class="w-1/2 pr-8"></div>
+        <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-md">
+          <span>10</span>
+        </div>
+        <div class="w-1/2 pl-8">
+          <h3 class="text-lg font-semibold text-primary">Doğrulama prosedürleri oluşturulur</h3>
+          <p class="text-gray-600 mt-2">Sistemin etkinliğini doğrulamak için düzenli denetim ve test prosedürleri geliştirilir.</p>
+        </div>
+      </div>
+      
+      <!-- Adım 11 -->
+      <div class="flex items-center relative">
+        <div class="w-1/2 pr-8 text-right">
+          <h3 class="text-lg font-semibold text-primary">Dokümantasyon ve kayıt sistemi oluşturulur</h3>
+          <p class="text-gray-600 mt-2">Tüm süreçlerin izlenebilirliğini sağlayan kapsamlı bir dokümantasyon ve kayıt sistemi kurulur.</p>
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center z-10 shadow-md">
+          <span>11</span>
+        </div>
+        <div class="w-1/2 pl-8"></div>
+      </div>
     </div>
   </section>
+  
   <section class="container mx-auto px-4 md:px-8 py-16 bg-white rounded-lg shadow-sm">
     <div class="text-center mb-12">
       <h2 class="text-3xl font-bold text-primary mb-4">Referanslarım</h2>
@@ -380,10 +477,11 @@ Tedarik zinciri optimizasyonu ve sürdürülebilir lojistik çözümleri ile iş
 <div>
 <h3 class="font-semibold text-gray-800 mb-4">Hızlı Erişim</h3>
 <ul class="space-y-2">
-<li><a href="#" class="text-gray-600 hover:text-primary">Ana Sayfa</a></li>
-<li><a href="#" class="text-gray-600 hover:text-primary">Hakkımda</a></li>
-<li><a href="#" class="text-gray-600 hover:text-primary">Çalışmalarım</a></li>
-<li><a href="#" class="text-gray-600 hover:text-primary">Blog</a></li>
+<li><a href="index.html" class="text-gray-600 hover:text-primary">Ana Sayfa</a></li>
+<li><a href="hakkımda.html" class="text-gray-600 hover:text-primary">Hakkımda</a></li>
+<li><a href="calismalarim.html" class="text-gray-600 hover:text-primary">Çalışmalarım</a></li>
+<li><a href="medya.html" class="text-gray-600 hover:text-primary">Medya</a></li>
+<li><a href="iletisim.html" class="text-gray-600 hover:text-primary">İletişim</a></li>
 </ul>
 </div>
 <div>
@@ -431,6 +529,7 @@ Tedarik zinciri optimizasyonu ve sürdürülebilir lojistik çözümleri ile iş
 </div>
 </footer>
 </div>
+
 <script>
  // Mobil menü için script
  document.addEventListener('DOMContentLoaded', function() {
@@ -439,17 +538,17 @@ Tedarik zinciri optimizasyonu ve sürdürülebilir lojistik çözümleri ile iş
     mobileMenu.className = 'fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out';
     mobileMenu.innerHTML = `
       <div class="flex justify-between items-center p-4 border-b">
-        <div class="font-['Pacifico'] text-2xl text-primary">Nurper</div>
+        <div class="logo-container h-16 w-auto"><img src="logo.png" alt="Demet Ayaz Logo" class="h-full w-auto object-contain"></div>
         <button class="mobile-close w-8 h-8 flex items-center justify-center">
           <i class="ri-close-line text-xl"></i>
         </button>
       </div>
       <nav class="flex flex-col p-4">
-        <a href="index.html" class="text-gray-700 hover:text-primary py-3 border-b">Ana Sayfa</a>
+        <a href="index.html" class="text-primary font-medium py-3 border-b">Ana Sayfa</a>
         <a href="hakkımda.html" class="text-gray-700 hover:text-primary py-3 border-b">Hakkımda</a>
-        <a href="calismalarim.html" class="text-primary font-medium py-3 border-b">Çalışmalarım</a>
+        <a href="calismalarim.html" class="text-gray-700 hover:text-primary py-3 border-b">Çalışmalarım</a>
         <a href="#" class="text-gray-700 hover:text-primary py-3 border-b">Blog</a>
-        <a href="#" class="text-gray-700 hover:text-primary py-3">İletişim</a>
+        <a href="#" class="text-gray-700 hover:text-primary py-3 border-b">İletişim</a>
       </nav>
     `;
     document.body.appendChild(mobileMenu);
