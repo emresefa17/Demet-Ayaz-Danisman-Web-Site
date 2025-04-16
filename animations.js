@@ -200,40 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Mobil menü toggle
-  const setupMobileMenu = () => {
-    const menuToggle = document.querySelector('.md\\:hidden');
-    if (menuToggle) {
-      const mobileMenu = document.createElement('div');
-      mobileMenu.className = 'mobile-menu fixed inset-0 bg-white z-50 transform translate-x-full transition-transform duration-300 ease-in-out';
-      mobileMenu.innerHTML = `
-        <div class="p-6 flex justify-between items-center border-b border-gray-200">
-          <div class="font-['Pacifico'] text-2xl text-primary">Demet Ayaz</div>
-          <button class="close-menu w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-full transition-all duration-300">
-            <i class="ri-close-line text-xl text-primary"></i>
-          </button>
-        </div>
-        <nav class="p-6 flex flex-col space-y-4">
-          <a href="index.html" class="text-lg font-medium py-2 border-b border-gray-100">Ana Sayfa</a>
-          <a href="hakkımda.html" class="text-lg font-medium py-2 border-b border-gray-100">Hakkımda</a>
-          <a href="calismalarim.html" class="text-lg font-medium py-2 border-b border-gray-100">Çalışmalarım</a>
-          <a href="blog.html" class="text-lg font-medium py-2 border-b border-gray-100">Blog</a>
-          <a href="iletisim.html" class="text-lg font-medium py-2">İletişim</a>
-        </nav>
-      `;
-      document.body.appendChild(mobileMenu);
-      
-      const closeMenu = mobileMenu.querySelector('.close-menu');
-      
-      menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.remove('translate-x-full');
-      });
-      
-      closeMenu.addEventListener('click', () => {
-        mobileMenu.classList.add('translate-x-full');
-      });
-    }
-  };
+ 
 
   // Animasyon sınıflarını ekle
   const setupAnimations = () => {
